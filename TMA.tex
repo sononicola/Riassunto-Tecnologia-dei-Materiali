@@ -1,0 +1,285 @@
+\documentclass[a5paper,12pt]{article}
+\usepackage[a5paper]{geometry}\geometry{top=1.5cm,bottom=1.5cm,left=1cm,right=1cm,heightrounded,bindingoffset=0mm}
+%\pagestyle{empty} %toglie il numero a pié di pagina e in testata
+\usepackage[T1]{fontenc}
+\usepackage[utf8]{inputenc}
+\usepackage[italian]{babel}
+\usepackage{graphicx}
+\usepackage{subfig}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{braket}
+\usepackage[output-decimal-marker={,}]{siunitx}
+\usepackage{float}
+\usepackage{tabularx}
+
+\usepackage{xspace}% per lo spazio intelligente
+\newcommand{\e}{\`E\xspace}  %E' 
+
+%solo una prova \newcommand{\tR}{\qquad \forall t \in \mathbb{R}}
+\begin{document}
+\title{
+	\begin{Huge}
+		\textbf{Riassunti di TMA}
+	\end{Huge}
+}
+\author{
+	\begin{huge}
+		Nicola Meoli
+	\end{huge}
+}	
+\date{}
+\maketitle
+\begin{center}
+\line(1,0){300}
+\end{center}
+
+\section{I materiali e le loro proprietà}
+Il materiale è definito come la materia (o sostanza) utilizzata dall'uomo per la fabbricazione degli oggetti che ci circondano. Per realizzare le sue opere l'ingegnere si serve di una determinata fase di aggregazione: solida, liquida o gassosa. 
+
+La \emph{scienza dei materiali} riguarda in primo luogo la conoscenza di base della struttura interna, delle proprietà e dei metodi di lavorazione dei materiali; la \emph{tecnologia dei materiali} riguarda invece l'uso della conoscenza di base e applicata dei materiali al fine di convertirli nei prodotti necessari. Il nome \emph{scienza e tecnologia} combina insieme questi due aspetti.
+
+I materiali possono essere classificati secondo la loro composizione o secondo le loro funzioni e proprietà. Nel primo caso abbiamo materiali metallici, materiali ceramici, materiali polimerici e materiai compositi. Ogni sviluppo tecnologico è legato allo sviluppo di materiali nuovo o al miglioramento dell'esistente. 
+\subsection{Materiali metallici}
+Sono sostanze inorganiche composte da uno o più elementi metallici e possono contenere anche alcuni elementi non metallici. Se combinati insieme si parla di leghe. Vengono suddivisi in \emph{metalli e leghe ferrose} (alta percentuale di ferro -- acciai e ghise) e \emph{metalli e leghe non ferrose} (piccole o zero quantità di ferro -- alluminio, rame, zinco, titanio, nichel).
+
+Hanno una struttura cristallina in cui gli atomi sono disposti in modo regolare nello spazio. Sono buoni conduttori termici ed elettrici.
+
+\section{Deformazione dei metalli}
+Quando un elemento metallico è soggetto all'azione di una forza di trazione subisce una deformazione. Se il metallo ritorna alle sue dimensioni originali dopo che è stata rimossa la forza si dice che ha subito una \emph{deformazione elastica}. In questo caso gli atomi si sono allontanati dalla loro posizione originale ma non tanto da poter occupare nuove posizioni  reticolari. Quando viene rimossa la forza gli atomi tornano alla loro posizione originale e il metallo recupera la forma iniziale. Nel caso in cui il metallo non ritorna nella forma originale vuol dire che si ha avuto una \emph{deformazione plastica}.
+
+Consideriamo una barra cilindrica lunga $l_0$ e di sezione $A_0$ sottoposta ad una forza di trazione agente lungo l'asse. Lo \emph{sforzo nominale} è definito come $\sigma=\frac{F}{A_0}$  e si misura in $[\SI{}{MPa}=\SI{}{N/mm^2}]$ mentre la \emph{deformazione nominale} è definita come $\epsilon = \frac{\Delta l}{l_0}$ e misura l'allungamento della barra dovuta alla forza. La deformazione \emph{reale} si calcola come $\epsilon_r = \ln{\frac{l}{l_0}}$ 
+mentre quella \emph{ingegneristica}, che vale solo per piccole deformazioni, ossia quelle elastiche recuperabili, come $\epsilon_i = \frac{\Delta l}{l_0}$. Se è minore di zero si ha compressione, se maggiore trazione.
+
+Una deformazione elastica longitudinale in un metallo provoca anche la variazione delle dimensioni laterali. Tale comportamento è governato dal \emph{modulo di Poisson}. In un materiale isotropo vale \[\nu=\frac{\epsilon_{laterale}}{\epsilon_{longitudinale}}=\frac{-\epsilon_x}{-\epsilon_z}=\frac{-\epsilon_y}{-\epsilon_z}\] e varia tra $0.2$ e $0.4$ \label{poisson}
+
+Un metallo può subire deformazione anche tramite sforzi di taglio $\tau$ ovvero l'azione di una coppia di forze di taglio $S$. Abbiamo quindi la relazione $\tau=\frac{S}{A}$, dove $A$ è l'area su cui agisce la forza di taglio.
+
+I metalli e le leghe mostrano una relazione lineare tra lo sforzo e la deformazione nella regione a comportamento elastico del diagramma sforzo-deformazione. Tale relazione è chiamata \emph{legge di Hooke} $\sigma = E*\epsilon \: , \: E=\frac{\sigma}{\epsilon}$. Il modulo di elasticità (o modulo di \emph{Young}) $E$ è legato alle forze di legame tra gli atomi del metallo. Più è alto e più il metallo è rigido e non si flette. Può essere calcolato tramite la pendenza della retta del grafico, valendo: \[E=\frac{1}{l_0}\frac{\Delta F_a}{\Delta l}\] Sapendo che $F_a = -F_l=\frac{\partial U}{\partial L}$ e che la curvatura in $l_0$ del raggio atomico vale $l_0 \approx \frac{d^2U}{dl^2}$  , può essere espresso come \[E=\frac{1}{l_0} \left[ \frac{d^2U}{dl^2} \right] _{l_0}\]
+Gli acciai hanno moduli di elasticità attorno ai $\SI{207}{GPa}$ mentre le leghe di alluminio attorno ai $\SI{70}{GPa}$ .
+
+Il \emph{carico di snervamento} \label{snerv} rappresenta la sollecitazione al di sopra della quale nel metallo o nella lega si manifestano significative deformazioni plastiche. Si definisce come la sollecitazione in corrispondenza alla quale si ha una prefissata deformazione plastica permanente residua.
+
+Il \emph{carico di rottura} è il massimo valore di resistenza raggiunto nel diagramma sforzo-deformazione . Superato tale carico sul provino si manifesta un restringimento localizzato della sezione (strizione) fino al raggiungimento della rottura. Più il metallo è duttile, più sarà evidente la strizione sul provino prima della rottura.
+%\section{Accenno sui legami}
+%Principali, secondari.
+\section{Struttura e geometria cristallina}
+Se gli atomi o gli ioni di un solido sono disposti secondo una disposizione ripetitiva nelle tre dimensioni dello spazio, essi formano un solido chiamato \emph{solido cristallino}. Nel caso non ci sia una certa regolarità nella loro disposizione si parla di \emph{solido amorfo}.
+
+Nei solidi cristallini la disposizione degli atomi da luogo ad un reticolo spaziale. Ogni reticolo può essere diviso in celle elementari ripetitive. Secondo lo studio di Bravais ne esistono 14 diverse tipologie con le quali è possibile descrivere tutti i possibili reticoli cristallini. Nella realtà circa il $\SI{90}{\%}$ degli elementi metallici cristallizza in sole tre diverse strutture cristalline: cubica a corpo centrato (CCC), cubica a facce centrate (CFC), esagonale compatta (EC). La maggior parte cristallizza con queste strutture compatte in quanto tanto più gli atomi si avvicinano gli uni agli altri legandosi saldamente insieme, tanto più viene rilasciata energia, dando luogo ad una situazione di livello energetico più basso e quindi più stabile. \e una conseguenza della tendenza della materia verso la condizione di energia interna minima. L'energia complessiva di tutti il cristallo è data dalla sommatoria delle energie relative alle coppie di atomi. Gli atomi vengono assimilati a delle sfere in quanto estremamente piccoli.
+
+Ogni struttura è caratterizzata quindi dalla cella unitaria ma anche dal \emph{numero di coordinazione}, ovvero il numero di atomi adiacenti che circondano ciascun atomo, e dal \emph{fattore di impaccamento} che corrisponde alla frazione volumetrica di atomi nella cella unitaria. \[P.F. = \frac{\text{volume atomi nella cella}}{\text{volume della cella}}\]
+\textit{(Da aggiungere i vari tipi di PF delle 3 celle principali e il caso dei non metalli. Direzione, piani, ecc. Polimorfismo o allotropia. Analisi raggi X)}
+\section{Solidificazione, difetti cristallini e cristallizzazione}
+\subsection{Solidificazione dei metalli}
+La maggior parte dei metalli vengono prodotti partendo dal metallo fuso e facendolo solidificare come semilavorati o direttamente come prodotti finiti. In genere la solidificazione di un metallo o di una lega può essere divisa in due stadi: 
+\begin{enumerate}
+	\item Nucleazione: formazione di nuclei stabili di solidificazione. Si divide in omogenea ed eterogenea
+	\item Crescita dei grani: crescita dei nuclei a formare cristalli fino ad ottenere una struttura a grani
+\end{enumerate}
+
+La \emph{nucleazione omogenea} avviene in un metallo fuso quando il metallo stesso fa sì che gli atomi formino nuclei. Quando un metallo puro liquido è raffreddato in modo adeguato al di sotto della sua temperatura di solidificazione di equilibrio, si creano numerosi nuclei omogenei. Alcuni atomi, soggetti a lento movimento, si legano tra loro. La nucleazione omogenea di solito richiede un notevole sottoraffreddamento rispetto alla temperatura di solidificazione. Esistono due tipi di variazione di energia: \emph{libera di volume} $G_v$ durante la trasformazione da liquido a solido e \emph{libera di superficie} $G_s$ per creare le superfici del nuovo solido. Se $\Delta G_v$ è la variazione dell'energia libera per unità di volume, allora la variazione per nucleo sferico è pari a $\frac{4}{3}\pi r^3\Delta G_v$. L'energia per creare la superficie di particelle sferiche è pari a $4 \pi r^2 \Delta G_s$. L'energia totale $\Delta G_{tot}$ è data dalla somma delle due. Essa è massima quando il raggio diventa quello critico $r^*$ (derivata in $dr$ uguale a zero). Se è maggiore di zero si ha una nucleazione spontanea in quanto l'energia del sistema si abbassa, se invece è minore di zero si ha una nucleazione non spontanea. Maggiore è il grado di sottoraffreddamento, maggiore è la variazione nell'energia libera di volume: \[r^* = \frac{2\gamma}{\Delta G_v} = \frac{2 \gamma T_f}{\Delta H_f \Delta T} \: \Longleftrightarrow \: \Delta G_v = \frac{\Delta H_f \Delta T}{T_f}\]
+
+La \emph{nucleazione eterogenea} è la nucleazione che avviene in un liquido con la superficie di un materiale dovuto all'\emph{agente nucleante} ad esempio impurezze insolubili o le pareti del contenitore.  Avviene sull'agente nucleante perché l'energia di superficie per formare un nucleo stabile è più bassa su questo materiale rispetto a quella che sarebbe necessaria se il nucleo si formasse nel liquido puro stesso (nucl. omogenea). Si abbassa anche la dimensione critica dei nuclei, pertanto è richiesto un grado di sottoraffreddamento molto minore per formare un nucleo stabile. 
+
+Dopo che si sono formati i primi nuclei, questi si accrescono formando cristalli. Quando la solidificazione del metallo è completata, i cristalli si uniscono tra loro formando legami fra i grani limitati a un certo numero di atomi. I cristalli nel metallo solidificato sono chiamati \emph{grani} e le loro superficie \emph{bordi di grano}. Se durante la solidificazione si creano pochi siti di nucleazione si avrà una struttura a grani grossi, se invece se ne formano molti si avrà una struttura a grani fini. Quest'ultima ha proprietà di resistenza meccanica e di uniformità dei prodotti finiti più elevata, perciò tutti i metalli sono fatti solidificare in modo da ottenere dei grani fini. Se non si utilizzano \emph{affinatori di grano} si ottengono due tipologie di struttura dei grani:
+\begin{itemize}
+	\item grani equiassici: uniformi nelle varie direzioni -- crescono a contatto con le pareti raffreddate della lingottiera
+	\item grani colonnari: sono allungati, sottili e irregolari e si formano quando la solidificazione avviene piano e con alti gradienti di temperatura -- crescono perpendicolarmente alle pareti
+\end{itemize}
+
+Nella produzione industriale i lingotti possono avere grandi dimensioni nel caso in cui dopo debbano essere trasformati negli opportuni semilavorati (lamiere, tondi), oppure si possono avere lingotti direttamente nella forma finale (pistoni). Gli affinatori di grano per ottenere grani fini sono piccole quantità di titanio, boro o zirconio aggiunti prima della colata.
+
+Nel caso di cristalli monocristallini la solidificazione deve avvenire attorno ad un singolo nucleo, cosicché nessun altro cristallo sia nucleato e possa crescere. Per fare ciò la temperatura di interfaccia solido-liquido deve essere solo leggermente più bassa della temperatura di fusione. Un esempio possono essere le turbine a gas o i chip dei circuiti elettronici.
+\subsection{Difetti cristallini}
+I difetti del reticolo cristallino sono classificati secondo la loro geometria e forma, i tre tipi principali sono difetti di punto (vacanze, impurezze sostituzionali) , difetti di linea (dislocazioni), difetti di superficie (interfacce, bordi di grano, superfici).
+
+La \emph{vacanza} si ha quando c'è l'assenza di un atomo. La loro energia di formazione è molto bassa. 
+
+Le \emph{dislocazioni} sono difetti che causano distorsioni di reticolo concentrate attorno ad una linea di atomi. Possono essere \emph{a spigolo} o \emph{a vite}. La prima è creata in un reticolo dell'inserzione di un mezzo piano aggiunto di atomi. Sono difetti non di equilibrio e immagazzinano energia nella regione distorta del reticolo. Si hanno sforzi di compressione nel mezzo piano aggiuntivo e sforzi di trazione sotto il mezzo piano aggiuntivo. Quelle a vite si formano in un cristallo perfetto a seguito dell'applicazione verso l'alto o il basso di sforzi di taglio nelle regioni di un cristallo tagliato da un piano di sezione. In questa regione viene immagazzinata energia. La maggior parte delle dislocazioni in realtà sono \emph{miste}.
+
+I \emph{bordi di grano} sono difetti di superficie che separano i grani di diverso orientamento. Si creano durante la solidificazione quando i cristalli formati da diversi nuclei crescono simultaneamente e si incontrano tra loro. La forma dei bordi di grano è dovuta alla crescita dei grani vicini. Il bordo di grano è una regione compresa tra due grani, circa $2-5$ diametri atomici in larghezza. Gli atomi nei bordi di grano hanno maggiore energia e limitano la possibilità di deformazione plastica, rendendo difficile, in tali regioni, il movimento delle dislocazioni. I bordi di grano hanno effetto sulle proprietà dei metalli: a temperature basse rinforzano i grani; a temperature elevate diventano punti di debolezza. 
+\subsection{Diffusione}
+\e definita come il meccanismo con cui la materia è trasportata attraverso la materia. Nei solidi la maggior parte delle reazioni coinvolgono movimenti atomici, come la precipitazione o la nucleazione e crescita di nuovi grani. Vi sono due tipi di diffusione: \emph{meccanismo per vacanze o sostituzionale} e il \emph{meccanismo interstiziale}.
+
+Il primo si ha quando gli atomi possono muoversi nel reticolo cristallino da un sito atomico all'altro se le vibrazioni consentono di superare l'energia di attivazione e se ci sono vacanze. Aumentando la temperatura aumentano le vacanze e perciò anche la diffusione.
+
+Il secondo meccanismo si ha quando gli atomi si muovono da un sito interstiziale ad un altro vicino senza spostare nessuno degli atomi del reticolo cristallino della matrice.
+
+La diffusione viene utilizzata nell'indurimento superficiale dell'acciaio attraverso cementazione gassosa (con il metano solitamente) e nel drogaggio con impurezze (per aumentare la conduzione elettrica) di wafer di silicio per circuiti elettronici. C'è inoltre la zincatura che serve per aumentare la resistenza a corrosione (vedi carpenteria metallica).
+\section{Microstruttura dei materiali}
+\e l'insieme di caratteristiche che va dal numero di fasi presenti alla loro distribuzione, forma geometrica, frazione in volume e dimensioni. Le caratteristiche importanti sono:
+\begin{itemize}
+	\item omogeneità: il materiale è costituito da una sola fase anche se non necessariamente da un solo elemento
+	\item eterogeneità: il materiale è costituito da due o più fasi distinte
+	\item isotropia: le proprietà assumono lo stesso valore nelle diverse direzioni -- gli amorfi e i policristallini non orientati
+	\item anisotropia: le proprietà assumono diverso valore nelle diverse direzioni -- i cristallini singoli e i policristallini orientati
+\end{itemize}
+Tramite microscopio si osservano i bordi di grano del provino di metallo. La superficie viene attaccata chimicamente creando dei solidi minuscoli che, non riflettendo la luce, appaiono al microscopio ottico come linee nere o scure. La microstruttura ci da il dettaglio delle proprietà: ad esempio è possibile notare la differenza tra due provini di acciaio in cui solo uno ha subito un trattamento termico (perlite e sferoidite).
+\paragraph{Porosità}
+La \emph{porosità} è il volume delle cavità rapportato al volume effettivo di materiale. Può essersi creata per il ritiro del materiale o per presenza di bolle di gas o spazi intergranulari nel materiale. Può inoltre essere aperta o chiusa, permeabile o non permeabile. La presenza di porosità altera il valore della densità dei materiali.
+
+Ci sono varie grandezze che sono utili nel calcolo: volume dei pori, volume dei pori aperti, volume reale, volume apparente, porosità totale, porosità aperta, densità apparente, densità reale, superficie specifica.
+
+La densità è misurata tramite la pesata idrostatica: sfruttando il principio di Archimede, il corpo viene pesato a secco e poi immerso in acqua. L'acqua che entrerà nei pori  modificherà il volume apparente e quindi il peso del provino \textit{(vedi formule slide pg 29)}.
+
+\section{Macrostruttura dei materiali}
+\textit{(Si aggancia alle formule a pagina \pageref{poisson})}\\
+Unendo Hooke e il modulo di Poisson. In caso di sollecitazione uniassiale. \[\sigma_x = -\epsilon_y \frac{E}{\nu} \: , \: \epsilon_r = \ln{\frac{l}{l_0}} \approx \frac{l - l_0}{l_0}\Longrightarrow l=l_0(1+\epsilon)\]
+$\dots$\\
+La deformazione è dovuta anche al cambiamento delle condizioni termiche. In questo caso si aggiunge il parametro $+ \alpha_i \Delta T$ alla deformazione meccanica.
+
+Ci possono essere vincoli monoassiali (pareti indeformabili), biassiali (telaio finestra), triassiali (oggetto avvolto da un altro materiale indeformabile).
+
+La deformazione di taglio $\gamma$ è definita dal rapporto tra $\Delta X $ e $\Delta Y$, ovvero dalla $\tan \theta$ nel grafico $\tau - \gamma$. Se il taglio è puramente elastico si ha che $\tau = G \gamma$, dove $G$ è il modulo di rigidità. Si ha inoltre che $E= 2 G(1 + \nu)$ \textit{(vedi dimostrazione slide pg 35)}.\\$\dots$
+\subsection{Deformazione plastica del cristallo}
+Avviene per scorrimento di una porzione di cristallo rispetto ad un'altra in seguito all'applicazione di uno sforzo di taglio $\tau_{max}$. Si hanno sforzi di taglio indotti $\tau_R$ lungo le varie direzioni. Nel caso in cui $\tau_R$ sia uguale a quello massimo in uno dei vari piani, si ha lo scorrimento. 
+La presenza di dislocazioni sul piano di slittamento abbassa il valore di $\tau_{max}$ teorico, pertanto possono esser necessari sforzi bassi perché avvenga lo slittamento. Se il piano di slittamento è orientato a \ang{45} si ha la componente massima dello sforzo applicato. Questo porta alla \emph{frattura duttile}. Nel caso in cui siano orientati a \ang{90} la componente non è favorevole alla deformazione e si ha \emph{frattura fragile}.
+\subsection{Snervamento}
+\textit{(Aggiunta alla definizione a pagina \pageref{snerv})\\}
+I materiali ceramici (come il calcestruzzo) non hanno limite di snervamento ma solo di frattura. 
+
+Nel grafico $\sigma - \epsilon$ applico lo sforzo, lo scarico e lo riapplico. Se lo faccio all'interno del campo elastico si ripercorre sempre la stessa retta iniziale. Se vado oltre il limite di snervamento, quando tolgo lo sforzo non torna a zero ma ad un valore più grande e parallelamente alla prima retta. Per trovare il punto in cui "cade" bisogna farlo per vie sperimentali di ogni lotto. Questa operazione posso farlo fin tanto che non raggiungo il punto di frattura.
+\section{Frattura (o rottura)}
+La frattura è la separazione in due o più parti di un solido sollecitato meccanicamente. Può essere di due tipi: duttile o fragile.  
+\paragraph{Duttile} La frattura duttile di un metallo avviene dopo un'estesa deformazione plastica ed è caratterizzata da basse velocità di propagazione della frattura. Nella frattura duttile si hanno tre stadi: 
+\begin{enumerate}
+	\item Nel provino inizia la strizione e si nucleano dei microvuoti;
+	\item I microvuoti formano una cricca al centro del provino e si propaga verso la superficie esterna perpendicolarmente allo sforzo;
+	\item Quando la cricca è vicina alla superficie si ha una rottura di tipo coppa-cono.
+\end{enumerate}
+
+\paragraph{Fragile} La frattura fragile avviene lungo piani cristallografici chiamati \emph{piani di clivaggio} e si propaga rapidamente. Nel caso di quella fragile si hanno solo due pezzi dopo la frattura. Non c'è preavviso di quando si rompe: è perciò importante prevederlo. Se si rompe in tanti pezzi si ha quella duttile.
+Nella fattura fragile le cricche si propagano attraverso la matrice dei grani.
+La rottura fragile è favorita nel caso di basse temperature e alte velocità di deformazione.
+\subsection{Tenacità}
+\e una misura della quantità di energia che un materiale è in grado di assorbire prima di giungere a frattura. Indica cioè l'attitudine di un materiale a resistere ad 	una sollecitazione d'urto prima di rompersi. Per misurare la tenacità si utilizza la \emph{prova di resilienza}: consiste nel far cadere un pendolo pesante sopra il provino tenuto fermo da due appoggi. Noti i valori iniziali si può calcolare l'energia assorbita dal provino per rompersi. Questa prova però non permette di avere parametri di progetto in caso siano presenti cricche o difetti. 
+
+La frattura di un metallo inizia nella zona in cui la concentrazione degli sforzi è massima ovvero, nel caso di provino piano con una cricca centrale sottoposto a trazione, nell'apice della cricca acuta. L'intensità dello sforzo dipende dalla seguente relazione: $K_I = Y \sigma \sqrt{\pi a} $ --- dove: $K_I$ fattore di intensità degli sforzi, $Y$ costante geometrica, $\sigma$ sforzo nominale applicato, $a$ lunghezza della cricca. Si ha l'intensità critica $K_{IC}$ quando si arriva a rottura con un certo $\sigma_f$. 
+Più alto è questo valore più il materiale è duttile.
+\paragraph{Teoria di Weibull}
+La resistenza a frattura è di natura statistica, perciò possiamo solo calcolare il rischio. ($R$: rischio, $A$: affidabilità, $P_{r,v}$: probabilità, $m$: costante di omogeneità)
+\[R=\int_v{\left(\frac{\sigma}{\sigma_0}\right)^m} \qquad A=\exp(-R) \qquad P_{r,v}=1-A\]
+In realtà non si usa questo metodo ma il metodo di MOR che si basa sulla densità di probabilità di rottura (gaussiana).
+
+\e possibile aumentare la tenacità tramite materiali che ostacolano il punto di frattura tenendo uniti i pezzi. Nei calcestruzzi fibrorinforzati le fibre hanno proprio questo compito. Nei vetri è possibile fare una tempra fisica raffreddando molto velocemente il vetro o facendo uno scambio ionico in bagni di potassio (vetro temprato), oppure è possibile rivestirli di un film plastico PVB interposto tra due lastre (vetro stratificato).
+\subsection{Frattura per fatica}
+In molte applicazioni i metalli, se soggetti a sollecitazioni cicliche, possono rompersi pur se sottoposti a sforzi molto inferiori a quelli consentiti in caso di sollecitazione statica.
+\section{Prove meccaniche}
+\textit{Vedi slide TMA 5}
+\paragraph{Prova di trazione} Consente di valutare la resistenza meccanica dei metalli e delle leghe. Un campione di metallo viene tirato fino a rottura in un tempo breve e velocità costante. Viene utilizzata per trovare il modulo di elasticità, carico di snervamento, carico di rottura, allungamento a rottura, strizione percentuale.
+\[A*L = A_0 * L_0 \qquad \text{Sforzo ingegneristico}      \, \sigma_0 = \sigma_i = \frac{P}{A_0}\] 
+\paragraph{Prova a compressione} Con il calcestruzzo si fanno provini cubici durante la fase di getto. Se è già in opera si fa un carotaggio. 
+\paragraph{Prova a flessione} Può essere a 3 o 4 punti. Quella a 4 è meglio perché si ha più probabilità che la cricca cada all'interno della zona dove sono presenti i due carichi. Se cade fuori (soprattutto nella 3 punti) allora la prova non è valida.
+\paragraph{Prova di durezza} La durezza è la pressione di equilibrio che la superficie del solido riesce a sopportare a seguito di una sollecitazione esercitata da un oggetto più o meno appuntito, chiamato \emph{identatore}.
+
+Se aumenta la durezza aumenta anche la resistenza ma anche la fragilità. Se diminuisce la durezza, diminuisce anche la resistenza ma aumenta la duttilità.
+
+Acciai: brinell, rockwell; Materiali fragili: vickers (identatore con punta di diamante piramidale, knoop.
+\section{Creep}
+Lo scorrimento viscoso a caldo (o creep) avviene quando un materiale metallico è sottoposto ad una sollecitazione costante ad alta temperatura. \e quindi una deformazione dipendente dal tempo e dalla temperatura $\epsilon = \epsilon(T,t)$. \e un valore da tener conto in tutte quelle strutture che operano a carico costante e a temperatura elevate (es: turbine di un motore). 
+
+Nel grafico $\epsilon-t$ si ottengono le curve di creep. Esse dipendono dalla sollecitazione applicata e dalla temperatura: più sono alte, più è grande la \emph{velocità di creep} che è data dalla derivata rispetto al tempo $\dot{\epsilon}$. A livello macroscopico si può analizzare:
+\begin{enumerate}
+	\item Inizialmente si verifica un allungamento istantaneo del provino $\epsilon_0$, successivamente si ha una fase "creep primario" in cui la deformazione decresce con il tempo
+	\item si ha una fase "creep secondario" in cui la velocità di creep è costante
+	\item infine si ha il "creep terziario" in cui la velocità aumenta rapidamente nel tempo fino alla deformazione a rottura.
+\end{enumerate}
+A livello microscopico si ha:
+\begin{enumerate}
+	\item Il metallo si incrudisce per sostenere la sollecitazione e quindi la velocità diminuisce
+	\item si verificano fenomeni di recupero che eguagliano quelli di incrudimento per cui il metallo si allunga ma a velocità costanti 
+	\item si ha la formazione di microvuoti ai bordi di grano e lo scorrimento di tali bordi
+\end{enumerate}
+\section{Legge di Newton e Reologia. Materiali amorfi e non cristallini}
+\textit{(Non c'è sul libro)}\\
+I materiali amorfi si deformano tramite l'azione di forze tangenziali. Derivando $\tau$ lungo la curva e facendo un cambiamento di coordinate si ottiene $\tau = \eta \, \dot{\gamma}$. Questa relazione è chiamata \emph{legge di Newton} in cui $\gamma$ è la deformazione di taglio vista nella sezione 6 e $\eta$ è la resistenza di un fluido allo scorrimento e si misura con il viscosimetro $\eta = \eta_0 \, e^{E/kT}$.
+\subsection{Reologia}
+\e lo studio della deformabilità dei materiali non cristallini e delle sospensioni. 
+\paragraph{Pseudoplastici} Sono i sistemi con particelle piccole (polveri) e scorrono male con velocità di deformazione modesta (altrimenti sono i fluidi). Questo perché le particelle vengono rallentate dalle forze interparticellari.
+\paragraph{Dilatanti} Sono i sistemi con particelle grosse (sabbie e pietrisco) che scorrono bene se la velocità di deformazione è modesta, ma sono rigidi se aumenta. Questo perché l'attivazione dei piani di scorrimento richiede un aumento di volume.
+\paragraph{Fluidi tixotropici} Sono pseudoplastici in andata (nel grafico) e dilatanti nel ritorno.
+\paragraph{Sistemi monomodali} Presentano particelle tutte delle stesse dimensioni.
+Nei sistemi monomodali \emph{asciutti} si ha che lo scorrimento richiede uno sforzo di taglio e il sollevamento dei piani provoca un aumento di volume del \SI{13.4}{\%}. Nel caso sia inferiore vuol dire che non tutti i piani sono attivi per lo scorrimento. Maggiore è la velocità di scorrimento e maggiori sono i piani attivi. La facilità di scorrimento è quindi maggiore nel caso le particelle siano fine in quanto si ha un maggior numero di piani attivi per unità di spessore.
+\paragraph{Sistemi bimodali} Sono meno meno espansivi dei monomodali. Le particelle più piccole agiscono da lubrificante
+\paragraph{Sabbie} Le sabbie \emph{asciutte} e quelle \emph{completamente bagnate} scorrono facilmente ma non possono essere formate. Sono un sistema bifase sabbia-aria e sabbia-acqua. Le sabbie \emph{umide} invece possono essere formate ma non scorrono . Sono un sistema trifase sabbia-aria-acqua.
+\subsection{Energia}
+La differenza di massa e di energia superficiale determina i differenti comportamenti quando i corpi entrano in movimento. L'energia cinetica (o di repulsione) varia con il cubo del raggio della particella, mentre quella di adesione è lineare:
+\[E_c = \frac{1}{2}m v^2 = \frac{1}{2}\left( \frac{3}{4} \pi \rho r^3 \right)v^2\]
+\paragraph{Sabbie} Hanno dimensioni attorno i \SI{100}{\mu m} e sono tali per cui l'energia di repulsione prevalga sulle forze che tendono ad unirle: tendono quindi a scorrere quando sono asciutte.
+\paragraph{Polveri} Hanno dimensioni attorno ai \SI{10}{\mu m} e sono tali che l'energia di attrazione prevalga sulle forze che tendono a separarle: tendono quindi a compattarsi.
+\subsection{Sospensioni}
+La polvere dispersa in un solvente (acqua) produce una sospensione con fase dispersa in fase disperdente (fase continua).
+La sospensione \emph{stabile} viene detta sistema colloidale: l'energia cinetica è preponderante rispetto a quella di adesione. In genere le particelle hanno dimensioni tra i \SI{10}{nm} e i \SI{1}{\mu m}. Con il cemento si arriva anche a \SI{20}{\mu m}.
+Se la sospensione non è stabile si può avere coagulazione -- anche detto \emph{blinding}: nel calcestruzzo quando l'acqua affiora in superficie dopo il getto.
+
+Una sospensione di particelle organiche è detta lattice. Una sospensione minerale è detta fango (o poltiglia, o pasta).
+\paragraph{Surfattanti o tensioattivi} Sono sostanze capaci di influenzare il comportamento dei sistemi colloidali. Hanno la proprietà di abbassare la tensione superficiale di un liquido agevolando la bagnabilità delle superfici o la miscibilità tra liquidi diversi (es: superfluidificanti nel cls).
+\section{Materiali compositi}
+\e un sistema di materiali composto da una miscela o combinazione di due o più micro o macrocostituenti che differiscono nella forma e nella composizione chimica e che essenzialmente sono insolubili l'uno all'altro. 
+\e  un materiale multifase creato artificialmente in cui le fasi sono distinguibili per la presenza di 
+una netta interfaccia. 
+
+L'importanza risiede nel fatto che due o più materiali distinti combinati insieme ottengono proprietà superiori a quelle dei singoli componenti. \e possibile aumentare la rigidità $E$ (es: laminazione nel legno), aumentare il limite di snervamento $\sigma$ e la tenacità $K_{IC}$ (es: le barre di armatura nel calcestruzzo diminuiscono la frattura) oppure diminuire la densità $\rho$ (es. il cls armato ha minor densità dell'acciaio puro. Ancora meglio il legno).
+
+Nel composito si distinguono: \emph{matrice} (fase continua), \emph{rinforzo} (fase dispersa), \emph{interfaccia} (rinforzo). Esempio del cls, rispettivamente: base cementizia, aggregati, acciaio + fibre (+ filler e additivi).
+
+Consideriamo un campione di prova composito laminato con strati alternati di fibre continue e del materiale della matrice. Lo sforzo viene applicato parallelamente. In questo caso lo sforzo agente sul materiale determina una deformazione uniforme su tutti gli strati di composito. Questo tipo di applicazione del carico è detto in condizioni di \emph{isodeformazione}. Il carico sulla struttura composita è uguale alla somma dei carchi sui singoli strai $F_c = F_A + F_B$ e $l=l_A = l_B$ ne deriva che $ \dots \quad E=E_A \varphi_A + E_B \varphi_B$  
+
+Consideriamo ora la struttura di prima nel caso lo sforzo applicato sia perpendicolare. Questo determina che la sollecitazione sia uguale in tutti gli strati e viene detto in condizioni di \emph{isosforzo}. $F_c= F_A = F_B$ e $l=l_A + l_B$ ne deriva che $ \dots \quad E=\frac{E_A E_B}{E_A \varphi_A + E_B \varphi_B}$
+\subsection{Fibre lunghe e corte}
+$\dots$\\
+Le fibre corte si usano per aumentare la tenacità, quelle lunghe per aumentare la resistenza.
+\paragraph{Test di pull-out} Test dell'estrazione. SI usa per testare la resistenza alla sfilatura delle fibre. Lo stesso vale per il calcestruzzo.
+\section{Materiali metallici}
+\subsection{Ripasso}
+Si definisce \emph{fase} una porzione omogenea di un materiale che si differenzia da altre porzioni per diversità di microstruttura e/o composizione chimica. I \emph{diagrammi di stato} sono rappresentazioni grafiche delle fasi presenti in un sistema a diverse temperature.
+Regola delle fasi di Gibbs: $F + V = C+2$, $F$: numero di fasi, $V$: gradi di libertà, $C$: numero di componenti del sistema. L maggior parte dei diagrammi sono temperatura-composizione e hanno $F + V = C+1$. \e applicata a tutti idiagrammi di stato binari.
+\paragraph{Sistemi eutettici}  Avviene a temperatura prefissata di \SI{183}{\celsius}. Quando il liquido di composizione eutettica viene raffredato lentamente alla temperatura eutettica, il liquido monofase si trasforma simultaneamente in due fasi solide $\alpha$ e $\beta$. $\dots$
+\subsection{Leghe}
+Le leghe a base di ferro vengono dette \emph{leghe ferrose}, mentre quelle basate su altri elementi (come ottone, alluminio, titanio e magnesio) vengono dette \emph{leghe non ferrose}. Le prime si divino a loro volta in due sotto-categorie in base alla percentuale di tenore di carbonio presente in esse: se maggiore del $3 \div \SI{4.5}{\%}$ sono dette \emph{ghise}, se minore dello \SI{1.4}{\%} sono dette \emph{acciai}. La ghisa grezza è ottenuta nell'altoforno in cui il coke è usato come agente riducente degli ossidi di ferro. Viene poi utilizzata per la produzione dell'acciaio. \e ottenuto infatti per ossidazione del carbonio e delle altre impurità presenti nella ghisa grezza, finché il contenuto di carbonio nel ferro si riduce al livello richiesto (aggiungendo addensanti di scorie come la calce).
+
+Il ferro può assumere diverse strutture in funzione di pressione e temperatura passando tra $bbc$ e $fcc$. Si dice che è polimorfo o allotropo. 
+
+Vengono create le leghe perché il composto che si ottiene può avere proprietà migliori rispetto agli elementi di partenza. 
+Le fasi presenti nelle leghe ferro-carbonio possono essere prodotte nel diagramma $Fe-Fe_3C$, si hanno quattro fasi: 
+\begin{itemize}
+	\item Ferrite-$\alpha$ Soluzione solida interstiziale del carbonio. Stabile fino a \SI{912}{\celsius}, struttura $bcc$, scioglie a \SI{727}{\celsius} con lo \SI{0.022}{\% C}
+	\item ferrite $\gamma$ (austenite):
+	\item ferrite-$\delta$
+	\item $Fe_3C$ Cementite:
+\end{itemize}
+Nella trasformazione eutettodica viene prodotta la \emph{perlite}: ferrite $\alpha$ e cementite. Può essere fine o grossolana in base alla velocità di raffreddamento. La perlite fine ha maggiori proprietà meccaniche, la perlite grossolana è più facilmente lavorabile.
+
+In base a quanto carbonio è presente gli acciai possono essere ipoeutettoidi ($\%C<\SI{0.76}{\%}$), eutettoidi o ipereutettoidi ($\%C>\SI{0.76}{\%}$). I primi hanno bassa/media resistenza e buona lavorabilità. Gli ultimi hanno alta resistenza ma poca lavorabilità.
+
+Se un campione di acciaio viene riscaldato e mantenuto per un tempo sufficiente a circa \SI{750}{\celsius} la sua struttura diventerà austenite. In base alla velocità di raffreddamento si possono ottenere:
+\begin{itemize}
+	\item con raffreddamenti lenti: la perlite + una fase proeutteoide
+	\item con raffreddamenti moderati: la bainite
+	\item con una tempra rapida: la martensite (può essere di vari tipi in base al contenuto di carbonio di partenza). Se la riscaldo ad una temperatura inferiore a quella eutettoida ottengo la martensite rinvenuta, che è meno dura e resistente ma più duttile e tenace.
+\end{itemize}
+Esistono appositi diagrammi nel caso delle tempre: \emph{TTT} (Trasformazione Tempo Temperatura) per trasformazioni isotermiche quindi con Temp = cost.  e \emph{CCT} (Continous Cooling Transformation).
+
+La \emph{temprabilità} misura la capacità degli acciai ad indurirsi dopo una tempra. Un acciaio temprabile è un acciaio che indurisce fino a cuore e non solo in superficie. \e possibile misurarla tramite la \emph{prova Jominy}: il provino estratto dal forno viene raffreddato ad acqua ad una estremità. Successivamente viene misurato il profilo di durezza a varie distanze dalla superficie raffreddata.
+
+Gli acciai inossidabili sono composti dal \SI{13}{\%} di cromo. Sono in grado di resistere bene alla corrosione in molti ambienti grazie ad un layer protettivo di ossido ($Cr_2O_3$) dello spessore di alcuni nanometri.
+Gli acciai \emph{inox duplex} hanno una doppia fase contemporanea. Nel caso abbiano un alto contenuto di cromo sono adatti in presenza di acidi ossidanti. Se aggiunti con molibdeno e nickel sono adatti in presenza di acidi mediamente riducenti. Gli acciai \emph{inox PH} hanno un'elevata resistenza meccanica grazie al trattamento di invecchiamento (es: aerei). 
+\section{Il calcestruzzo}
+Il \emph{cemento portland} è prodotto cuocendo terre come calcare, argilla, cenere di pirite e macinando il prodotto della cotture -- chiamato \emph{clinker} -- a cui viene aggiunto gesso o anidride per far in modo che non abbia una presa rapida. Il gesso e l'anidride funzionano appunto da regolatori di presa. La miscela che si ottiene viene chiamata cemento portland. Da questo si ricavano gli altri leganti nel caso si aggiungano altri componenti come pozzolana, cenere di carbone, loppa d'altoforno, ecc.
+ 
+Il cemento Portland è un legante idraulico e reagendo con l'acqua produce calce. La \emph{pozzolana} non è un legante idraulico ma in presenza di calce lo diventa. Perciò combinando cemento Portland (per il $40\div\SI{50}{\%}$) e pozzolana si ottiene il \emph{cemento pozzolanico} che combina le migliori prestazioni. Ad esempio riduce si riduce il calore sviluppato. --- La pozzolana non è più in commercio.
+
+Il \emph{cemento d'altoforno} lo si ottiene allo stesso modo sopra con al posto della pozzolana la \emph{loppa d'altoforno}.\\ \dots\\
+Il fumo di silice è un sottoprodotto del processo produttivo del silicio metallico o delle leghe metalliche ferro-silicio. Si presenta in forma di microsfere con dimensioni prevalentemente al di sotto di \SI{0.1}{\mu m} e quindi capaci di allocarsi negli interstizi tra i granuli di cemento. Tuttavia l'elevata finezza non ne consente l'impiego di oltre il \SI{10}{\%} per il conseguente aumento di acqua richiesto: è perciò abbinato ad un superfluidificante. Viene usato per calcestruzzi impermeabili ad alta resistenza meccanica a compressione, in quelli proiettati per via umida e il quelli autocompattanti. 
+\subsection{Idratazione}
+Da massa inizialmente plastica e facilmente modellabile si arriva ad un materiale rigido e meccanicamente resistente come la pietra. Con il progredire della reazione chimica tra l'acqua ed il cemento prima si perde la lavorabilità fino a diventare un impasto non più modellabile (\emph{presa} -- dopo una o due ore), poi si ha un progressivo aumento della resistenza meccanica (\emph{indurimento} -- da un paio di giorni, dopo i quali è possibile scasserare, fino a 28 giorni in cui si ha quella valida per le prove e per la prestazione strutturale).
+\section{Vetri}
+Quando i fotoni vengono trasmessi attraverso un materiali trasparente perdono parte della loro energia e, di conseguenza, la velocità della luce diminuisce e il raggio di luce cambia direzione $n=\frac{c}{\nu}$
+\subsection{Fibre ottiche}
+Utilizzando un rivestimento con un vetro a basso indice di rifrazione su un nucleo con un alto indice di rifrazione, è possibile che una fibra ottica trasmetta luce a grande distanza perché la luce viene continuamente riflessa all'interno della fibra stessa.
+\paragraph{Attenuazione} \e la dispersione della luce misurata in [\SI{}{dB/km}]. \e estremamente bassa nelle fibre ottiche. Così come lo sono le impurità ($Fe^{2+ }$) presenti nel vetro di $SiO_2$ .
+
+\end{document}
+
